@@ -52,14 +52,17 @@ they do not provide the quality needed when zoomed far in.
 Update this repo by removing the old files from history before adding the new ones. Do this to not waste space.
 
 1. Use `git filter-repo --path maps --invert-paths` to remove the files.
-
-2. Clean up git:<br>
-`git reflog expire --all --expire=now`<br>
-`git gc --prune=now --aggressive`
-4. Update remote<br>
-`git push origin --force --all`
+    - Use `--force` if needed
+2. Clean up git:
+    - `git reflog expire --all --expire=now`
+    - `git gc --prune=now --aggressive`
+3. Re-add origin:
+    - `git remote add origin https://github.com/zachaa/drehmal_images.git`
+4. Update remote:
+    - `git push origin --force --all`
 5. Add in the new map files and commit like normal.
-    - Make sure to add a `null_tile.webp` to the `\maps` directory
+    - Make sure to add a `null_tile.webp` to the `\maps` directory.
+    - This is a 256x256 WEBP file with solid gray color `#363636`.
 6. Update the main map repo.
 
 ## `icons`
